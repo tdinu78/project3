@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <app-searchfrm (searchDone)="updateGrid($event)" [s_category]="category"></app-searchfrm>
+      sunt in categoria: {{ category }}
+    </div>
+    <div class="col-sm-9">
+        <mat-grid-list appInfiniteScroller
+                       scrollPercent="70"
+                       immediateCallback="true"
+                       [scrollCallback]="scrollCallback" cols="4" rowHeight="200px">
+          <mat-grid-tile
+                  *ngFor="let image of datasource"
+                  [colspan]=1
+                  [rowspan]=1>
+            <img src="{{image.phoneNumber}}" class="tn"
+                 width="200" height="200"
+                 (click)=setSelectedImage(image)>
+            <div class="caption">
+              <p><strong>{{image.name}}</strong></p>
+              <p>{{image.email}}</p>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      <p>Pagina de categorie vine aici.</p>
+    </div>
+  </div>
+</div>

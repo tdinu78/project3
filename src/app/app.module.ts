@@ -1,47 +1,66 @@
-import * as $ from 'jquery';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { AppRoutes } from './app.routing';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { FullComponent } from './layouts/full/full.component';
-import { AppHeaderComponent } from './layouts/full/header/header.component';
-import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NavItemComponent } from './navbar/nav-item/nav-item.component';
+import { NavItemExtraComponent } from './navbar/nav-item-extra/nav-item-extra.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SearchfrmComponent } from './categories/searchfrm/searchfrm.component';
+import { AgmCoreModule } from '@agm/core';
+import { GglplcsComponent } from './gglplcs/gglplcs.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DemoMaterialModule} from './demo-material-module';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule
+} from "@angular/material";
+import { InfiniteScrollerDirective } from './infinite-scroller.directive';
 
-import { SharedModule } from './shared/shared.module';
-import { SpinnerComponent } from './shared/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FullComponent,
-    AppHeaderComponent,
-    SpinnerComponent,
-    AppSidebarComponent  
+    NavbarComponent,
+    NavItemComponent,
+    NavItemExtraComponent,
+    FooterComponent,
+    HomeComponent,
+    CategoriesComponent,
+    SearchfrmComponent,
+    GglplcsComponent,
+    InfiniteScrollerDirective
   ],
   imports: [
+      AgmCoreModule.forRoot({
+          //apiKey: "AIzaSyDviOSCqGI5VGN8kP4ltqtxt930uMh5vKg",
+          libraries: ["places"]
+      }),
     BrowserModule,
-    BrowserAnimationsModule,
-    DemoMaterialModule,
     FormsModule,
-    FlexLayoutModule,  
+    ReactiveFormsModule,
     HttpClientModule,
-    SharedModule,  
-    RouterModule.forRoot(AppRoutes)  
+    HttpModule,
+    AppRoutingModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MDBBootstrapModule.forRoot(),
+    MatGridListModule,
+    BrowserAnimationsModule
   ],
-  providers: [
-  {
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

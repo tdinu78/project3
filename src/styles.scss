@@ -1,0 +1,44 @@
+// /* You can add global styles to this file, and also import other style files */
+// body {
+//     font-family: 'Lato', sans-serif;
+//     font-weight: 400;
+//     // font-size: 14px;
+// }
+
+// // .nav-link {
+// //     border-radius: 7px;
+// //     border-style: dashed;
+// //     border-color: #eee;
+// //     border-width: 1px;
+// // }
+
+// .nav-link:hover {
+    // transform: translateY(-1px);
+    // border-style: dashed;
+    // border-color: black;
+    // border-width: 1px;
+    // background-color: #e6e6e6;
+    //  box-shadow: 0 4px 2px  rgba(255, 255, 255, 0.30);
+    // background-color: #d0d2d240;
+
+// }
+
+// .nav-link:active {
+//     transform: translateY(-1px);
+//     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+// }
+
+
+@media (min-width: 1200px) {
+    .navbar,
+    main {
+        padding-left: 130px;
+    }
+    .container {
+        max-width: 1600px;
+    } 
+}
+
+body { margin: 0; }
+
+body { margin: 0; }

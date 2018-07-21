@@ -1,0 +1,24 @@
+{
+  "rc":0,
+  "message":"OK",
+  "count":20,
+  "results":
+[
+  {
+    "name": "Resturante",
+    "priority": 1
+  },
+  {
+    "name": "Formatii si Dj",
+    "priority": 2
+  },
+  {
+    "name": "Foto si Video",
+    "priority": 3
+  },
+  {
+    "name": "Wedding Planner",
+    "priority": 4
+  }
+]
+}

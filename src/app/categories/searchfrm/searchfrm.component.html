@@ -1,0 +1,65 @@
+<div class="card">
+
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #searchForm="ngForm">
+            <div class="md-form form-sm">
+                <mat-form-field style="width:100%">
+                    <input matInput name="name" [(ngModel)]="sdata.name" placeholder="Denumire">
+                </mat-form-field>
+            </div>
+            <div class="md-form form-sm">
+                <i class="fa fa-envelope prefix"></i>
+                <app-gglplcs name="place" (updatedSearch)="updatePlace($event)" style="width:100%"></app-gglplcs>
+            </div>
+            <div class="md-form form-sm">
+                <i class="fa fa-envelope prefix"></i>
+                <mat-form-field style="width:100%">
+                    <input name="minPrice" matInput [(ngModel)]="sdata.minPrice" placeholder="Pret minim meniu">
+                </mat-form-field>
+            </div>
+            <div class="md-form form-sm">
+                <h6 class="m-b-0">Numar minim invitati</h6>
+                <mat-slider name="minInv" thumbLabel [(ngModel)]="sdata.minInv" style="width:100%"></mat-slider>
+            </div>
+            <div class="md-form form-sm">
+                <h6 class="m-b-0">Numar maxim invitati</h6>
+                <mat-slider name="maxInv" thumbLabel [(ngModel)]="sdata.maxInv" style="width:100%"></mat-slider>
+            </div>
+            <div class="row">
+                <div class="form-check col-sm-6">
+                    <mat-checkbox class="mr-1" name="outdoor" [(ngModel)]="sdata.outdoor" ></mat-checkbox>
+                    <label class="form-check-label">Outdoor</label>
+                </div>
+                <div class="form-check col-sm-6">
+                    <mat-checkbox class="mr-1" name="accommodation" [(ngModel)]="sdata.accommodation"></mat-checkbox>
+                    <label class="form-check-label">Cazare</label>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="form-check col-sm-6">
+                    <mat-checkbox class="mr-1" name="fireworks" [(ngModel)]="sdata.fireworks"></mat-checkbox>
+                    <label class="form-check-label">Artificii</label>
+                </div>
+                <div class="form-check col-sm-6">
+                    <mat-checkbox class="mr-1" name="events" [(ngModel)]="sdata.events"></mat-checkbox>
+                    <label class="form-check-label">Divertisment</label>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="form-check col-sm-6">
+                    <mat-checkbox class="mr-1" name="preparations" [(ngModel)]="sdata.preparations"></mat-checkbox>
+                    <label class="form-check-label">Aranjare salon</label>
+                </div>
+                <div class="form-check col-sm-6">
+                    <mat-checkbox class="mr-1" name="parking" [(ngModel)]="sdata.parking"></mat-checkbox>
+                    <label class="form-check-label">Parcare</label>
+                </div>
+            </div>
+            <div class="text-center py-4 mt-3">
+                <button class="btn btn-cyan" type="submit">Cauta</button>
+            </div>
+        </form>
+    </div>
+</div>

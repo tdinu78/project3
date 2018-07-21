@@ -1,0 +1,27 @@
+.tn{
+  margin:2px 0px;
+  box-shadow:#999 1px 1px 3px 1px;
+  cursor: pointer;
+  bottom: 0px;
+}
+.image{
+  position:relative }
+.caption{
+  position:absolute;
+  height:50px;
+  width:200px;
+  bottom: 0px;
+  opacity:0.9;
+  background-color:black;
+  color:white;
+  padding:5px;
+  font-family:verdana;
+  font-size:12px;
+}
+.mat-mrg-top{
+  margin-top: 5%!important;
+}
+p {
+  -webkit-margin-before: 5px !important;
+  -webkit-margin-after: 5px !important;
+}

@@ -1,0 +1,41 @@
+<mdb-navbar id ="aici" SideClass="navbar fixed-top navbar-expand-lg navbar-dark mdb-color darken-1 scrolling-navbar ie-nav" [containerInside]="false">
+    <logo>
+        <a class="logo navbar-brand" routerLink="/home">
+            <img class="mr-2" src="92817_champagne.ico" width="30" height="30" alt="Wedding Something">
+            <strong>Wedding Something</strong>
+        </a>
+    </logo>
+    <links>
+        <div class="col-lg-9 col-xl-8 offset-xl-1">
+            <ul class="navbar-nav">
+                <app-nav-item *ngFor="let item of navItems" [navItem]="item"></app-nav-item>
+
+                <li *ngIf="navItemsExtra.length > 0" class="nav-item waves-ligh dropdown ml-xl-5 hoverable" dropdown>
+
+                    <!--Trigger-->
+                    <a dropdownToggle class="nav-link waves-dark" mdbWavesEffect type="button">
+                  
+                        <i class="fa fa-ellipsis-h fa-2x opac"></i>
+                  
+                    </a>
+                  
+                    <!--Menu-->
+                    <div class="dropdown-menu dropdown-to-left dropdown-primary">
+                        <app-nav-item-extra *ngFor="let item of navItemsExtra" [navItemExtra]="item"></app-nav-item-extra>
+                    </div>
+                  </li>
+            </ul>
+
+        </div>
+        <div class="col-lg-3">
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item waves-light  ml-lg-auto hoverable" mdbWavesEffect>
+                    <a class="nav-link">
+                        <i class="fa fa-user"></i>
+                        Login
+                    </a>
+
+            </ul>
+        </div>
+    </links>
+</mdb-navbar>
